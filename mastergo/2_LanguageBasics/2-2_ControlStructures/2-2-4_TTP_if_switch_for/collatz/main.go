@@ -9,9 +9,18 @@ import (
 func collatz(n int) int {
 	c := 0
 
-	// TODO: Implement the Collatz function.
-	//
-	// Run go test until all tests pass.
+	mainLoop:
+	for {
+		switch  {
+		case n == 1:
+			break mainLoop
+		case n % 2 == 0:
+			n = n / 2
+		case n % 2 == 1:
+			n = (n * 3) + 1
+		}
+		c++
+	}
 
 	return c
 }
